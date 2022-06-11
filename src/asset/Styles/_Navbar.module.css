@@ -1,0 +1,19 @@
+.container_navbar {
+    height: 45px !important;
+    background-color: #fff !important;
+    box-shadow: none !important;
+}
+
+.container_typography {
+    width: 300px !important;
+    height: 250px !important;
+    color: #000;
+    margin-top: 5px !important;
+    margin-left: -10px !important;
+}
+
+.container_typography_btn {
+    margin-top: -180px !important;
+    margin-right: 10px !important;
+    background-color: rgba(0, 4, 22, 0.925) !important;
+}

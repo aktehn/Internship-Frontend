@@ -7,6 +7,8 @@ import { Button, TextField } from '@mui/material';
 import {useNavigate} from "react-router-dom"
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
+import classes from '../asset/Styles/_Login.module.css'
+import images from '../asset/images/login.png'
 
 export default function Login({isUser,setIsUser,login,setLogin,isRegister,setIsRegister}) {
 
@@ -56,30 +58,18 @@ export default function Login({isUser,setIsUser,login,setLogin,isRegister,setIsR
         }
     })
 
-    return (
-        <Container
-        maxWidth="sm"
-        style={{
-          marginTop: "200px",
-          textAlign: "center",
-        }}
-      >
-        <b style={{ fontSize: "40px" }}>{isUser ? 'Kullanıcı Girişi' : 'Şirket Girişi'}</b>
-        <p onClick={() => {
-            navigate("/register") 
-            setIsRegister(true)}
-      
-      }>
-          Kayıtlı değilmisin{" "}
-          <b style={{ color: "#8CC0DE", cursor: "pointer" }}>buraya</b> tıklayarak
-          kayıt ol
-        </p>
+  return (
+    <div>
+      <img src={images} className={classes.container_img} />
+      <Container className={classes.container_login} maxWidth="sm">
+        <div style={{padding: "25px"}}>
+          <b className={classes.container_login_b}>{isUser ? 'Kullanıcı Girişi' : 'Şirket Girişi'}</b>
+        </div>
         <form onSubmit={formik.handleSubmit}>
           <TextField
             id="email"
             label="Email"
-            variant="filled"
-            style={{ width: "100%" }}
+            style={{ width: "95%" }}
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -90,37 +80,33 @@ export default function Login({isUser,setIsUser,login,setLogin,isRegister,setIsR
             id="password"
             label="Şifre"
             type="password"
-            variant="filled"
-            style={{ width: "100%", marginTop: "20px" }}
+            style={{ width: "95%", marginTop: "20px"}}
             value={formik.values.password}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             error={formik.touched.password && formik.errors.password}
             helperText={formik.errors.password}
+            className={classes.container_login_input}
           />
-          <Button
-            variant="contained"
-            style={{ width: "25%", marginTop: "20px" }}
-            type="submit"
-          >
+        </form>
+        <div className={classes.container_login_div}>
+          <Button variant="contained" type="submit" className={classes.container_login_button}>
             Giriş Yap
           </Button>
-        </form>
-  
-        <Button
-          variant="contained"
-          style={{ width: "25%", marginTop: "20px", marginBottom: "20px" }}
-          onClick={() =>{
-            navigate("/register")
-            setIsRegister(true)
-          }}
-        >
-          Kayıt Ol
-        </Button>
-    <NotificationContainer/>
-
+          <Button
+            variant="contained"
+            onClick={() => {
+              navigate("/register")
+              setIsRegister(true)
+            }}
+            className={classes.container_login_button}
+          >
+            Kayıt Ol
+          </Button>
+        </div>
+        <NotificationContainer/>
       </Container>
-
-    );
+    </div>
+  );
 }
 

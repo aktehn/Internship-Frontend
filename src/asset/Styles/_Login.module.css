@@ -1,0 +1,38 @@
+.container_img {
+    width: 17.5%;
+    height: 17.5%;
+    margin-top: 2%;
+    margin-left: 41%;
+}
+
+.container_login {
+    width: 40% !important;
+    text-align: center;
+    border-radius: 0.27rem;
+    box-shadow: 0.05vmin 0.05vmin 0.05vmin rgba(0, 4, 22, 0.450);
+}
+
+.container_login_b {
+    font-size: 1.8rem;
+    padding-top: 50px !important;
+    color: rgba(0, 4, 22, 0.925);
+    text-shadow: 0.01vmin 0.25vmin 0.25vmin rgba(0, 4, 22, 0.925);
+}
+
+.container_login_div {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    text-align: center;
+    padding-bottom: 2.5%;
+}
+
+.container_login_button {
+    width: 30%;
+    font-size: .9rem !important;
+    padding: 0.5rem !important;
+    background-color: rgba(0, 4, 22, 0.925) !important;
+}
