@@ -109,6 +109,7 @@ export default function Navi({isUser,setIsUser,login,setLogin,isRegister}) {
                     variant="contained"
                     style={{ marginRight: "10px" }}
                     onClick={() => setIsUser(!isUser)}
+                    className={classes.container_typography_btn}
                   >
                     {isUser === true ? 'Şirket Kayıt Ekranı' : 'Kullanıcı Kayıt Ekranı'}
                   </Button>
